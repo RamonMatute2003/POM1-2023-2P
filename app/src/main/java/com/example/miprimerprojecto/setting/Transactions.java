@@ -15,7 +15,7 @@ public class Transactions {
     public static final String email="email";//email=correo
 
     //DDL cerate and drop
-    public static final String create_table_people="CREATE TABLE people(id INTEGER PRIMARY KEY AUTOINCREMENT, names TEXT,last_names TEXT, age INTEGER, email TEXT)";//create_table_people=crear tabla de personas
+    public static final String create_table_people="CREATE TABLE people(id INTEGER PRIMARY KEY AUTOINCREMENT, names TEXT, last_names TEXT, age INTEGER, email TEXT)";//create_table_people=crear tabla de personas
     public static final String drop_table_people="DROP TABLE IF EXISTS people";
 
     public static final String select_table_people="SELECT * FROM "+ Transactions.table_people;

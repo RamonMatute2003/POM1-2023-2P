@@ -25,7 +25,7 @@ public class Activity_combo extends AppCompatActivity {
     ArrayList<String> people_list;
     ArrayList<People> list;
 
-    //git
+    //Git
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
