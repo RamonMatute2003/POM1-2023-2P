@@ -2,7 +2,6 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
-
     <uses-permission android:name="android.permission.CAMERA"/>
     <uses-feature
         android:name="android.hardware.Camera"
@@ -12,7 +11,7 @@
         android:required="true" />
     <uses-feature
         android:name="android.hardware.camera"
-        android:required="false" />
+        android:required="true" />
 
     <queries>
         <!-- Browser -->

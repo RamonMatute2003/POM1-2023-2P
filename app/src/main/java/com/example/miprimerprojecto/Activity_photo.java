@@ -15,11 +15,11 @@ import android.widget.Toast;
 
 public class Activity_photo extends AppCompatActivity {
 
-    static final int image_capture_request=101;
-    static final int camera_access_request=102;
-    ImageView image_object;
-    Button btn_photo;
-    String path_photo;
+    static final int image_capture_request=101;//image_capture_request=solicitud de captura de imagen
+    static final int camera_access_request=102;//camera_access_request=solicitud de acceso a la cámara
+    ImageView image_object;//image_object=onjeto de imagen
+    Button btn_photo;//photo=foto
+    String path_photo;//path_photo=direccion de foto
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,8 +37,8 @@ public class Activity_photo extends AppCompatActivity {
         });
     }
 
-    private void permissions(){
-        if(ContextCompat.checkSelfPermission(getApplicationContext(), Manifest.permission.CAMERA)!= PackageManager.PERMISSION_GRANTED){
+    private void permissions(){//permissions=permisos
+        if(ContextCompat.checkSelfPermission(getApplicationContext(), Manifest.permission.CAMERA)!=PackageManager.PERMISSION_GRANTED){
             ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.CAMERA}, camera_access_request);
         }else{
             take_photo();
@@ -58,7 +58,7 @@ public class Activity_photo extends AppCompatActivity {
         }
     }
 
-    private void take_photo(){
+    private void take_photo(){//take_photo=tomar foto
 
     }
 }

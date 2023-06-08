@@ -3,5 +3,5 @@
     <string name="btn_show">Mostrar datos</string>
     <string name="btn_insert">Agregar</string>
     <string name="title_activity_combo">Activity_combo</string>
-    <string name="btn_photo">Foto</string>
+    <string name="btn_photo">Tomar foto</string>
 </resources>
