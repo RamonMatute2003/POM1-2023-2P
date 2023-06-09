@@ -1,13 +1,17 @@
 package com.example.miprimerprojecto;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 
 import android.Manifest;
+import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.graphics.Bitmap;
 import android.os.Bundle;
+import android.provider.MediaStore;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -52,13 +56,27 @@ public class Activity_photo extends AppCompatActivity {
         if(requestCode==camera_access_request){
             if(grantResults.length>0 && grantResults[0]==PackageManager.PERMISSION_GRANTED){
                 take_photo();
+            }else{
+                Toast.makeText(getApplicationContext(),"Se necesita el permiso para acceder a la camara",Toast.LENGTH_LONG).show();
             }
-        }else{
-            Toast.makeText(getApplicationContext(),"Se necesita el permiso para acceder a la camara",Toast.LENGTH_LONG).show();
         }
     }
 
     private void take_photo(){//take_photo=tomar foto
+        Intent intent=new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+        if(intent.resolveActivity(getPackageManager())!=null){
+            startActivityForResult(intent, image_capture_request);
+        }
+    }
 
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+
+        if(requestCode==image_capture_request){
+            Bundle extra=data.getExtras();
+            Bitmap image=(Bitmap) extra.get("data");
+            image_object.setImageBitmap(image);
+        }
     }
 }
