@@ -9,7 +9,7 @@ import android.widget.Button;
 
 public class Activity_start extends AppCompatActivity {
 
-    Button btn_list_people, btn_create_people, btn_combo;//btn_list_people=lista de personas, btn_create_people=crear persona
+    Button btn_list_people, btn_create_people, btn_combo, btn_capture;//btn_list_people=lista de personas, btn_create_people=crear persona,btn_capture=capturar
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -18,6 +18,7 @@ public class Activity_start extends AppCompatActivity {
         btn_create_people=(Button) findViewById(R.id.btn_create_people);
         btn_list_people=(Button) findViewById(R.id.btn_list_people);
         btn_combo=(Button) findViewById(R.id.btn_combo);
+        btn_capture=(Button) findViewById(R.id.btn_capture);
 
         btn_create_people.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -39,6 +40,14 @@ public class Activity_start extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent=new Intent(getApplicationContext(), Activity_combo.class);
+                startActivity(intent);
+            }
+        });
+
+        btn_capture.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent=new Intent(getApplicationContext(), Activity_photo.class);
                 startActivity(intent);
             }
         });
